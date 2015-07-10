@@ -1,0 +1,25 @@
+<%= form_for(@decoding) do |f| %>
+  <% if @decoding.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@decoding.errors.count, "error") %> prohibited this decoding from being saved:</h2>
+
+      <ul>
+      <% @decoding.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plain %><br>
+    <%= f.text_area :plain %>
+  </div>
+  <div class="field">
+    <%= f.label :encrypted %><br>
+    <%= f.text_area :encrypted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

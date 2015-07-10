@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plain:</strong>
+  <%= @decoding.plain %>
+</p>
+
+<p>
+  <strong>Encrypted:</strong>
+  <%= @decoding.encrypted %>
+</p>
+
+<%= link_to 'Edit', edit_decoding_path(@decoding) %> |
+<%= link_to 'Back', decodings_path %>

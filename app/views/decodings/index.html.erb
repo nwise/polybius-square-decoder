@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Decodings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plain</th>
+      <th>Encrypted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @decodings.each do |decoding| %>
+      <tr>
+        <td><%= decoding.plain %></td>
+        <td><%= decoding.encrypted %></td>
+        <td><%= link_to 'Show', decoding %></td>
+        <td><%= link_to 'Edit', edit_decoding_path(decoding) %></td>
+        <td><%= link_to 'Destroy', decoding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Decoding', new_decoding_path %>
