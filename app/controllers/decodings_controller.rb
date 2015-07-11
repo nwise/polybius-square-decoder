@@ -28,10 +28,8 @@ class DecodingsController < ApplicationController
 
     respond_to do |format|
       if @decoding.save
-        format.html { redirect_to @decoding, notice: 'Decoding was successfully created.' }
-        format.json { render :show, status: :created, location: @decoding }
+        format.json { render json: @decoding }
       else
-        format.html { render :new }
         format.json { render json: @decoding.errors, status: :unprocessable_entity }
       end
     end
