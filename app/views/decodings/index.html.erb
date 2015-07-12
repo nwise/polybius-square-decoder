@@ -1,14 +1,14 @@
 <div class='row'>
-  <div class='col-lg-9'>
+  <div class='col-lg-8'>
     <%= react_component 'Decodings', { data: @decodings } %>
   </div>
-  <div class='col-lg-3'>
+  <div class='col-lg-4'>
     <div class='well'>
       <h4>Instructions</h4>
       <p>This decoder is an implementation of the Polybius Square cipher. The basic form is a 5x5 grid where each square is assigned a single letter.
       Due to the English alphabet consisting of 26 letters, 'i' and 'j' have been combined.</p>
-
       <p>Enter the encoded string into the text area. Use '-' between letters and ' ' between words.</p>
+      <p>Example: ("54-34-45 52-24-33" = "you win")</p>
       <p>
       <table class="table table-striped table-bordered">
         <tbody><tr>
@@ -61,15 +61,13 @@
         </tr>
       </tbody></table>
       </p>
-      <p>
-      Read More about <a href='https://en.wikipedia.org/wiki/Polybius_square'>Polybius Square</a>.
-      </p>
+      <p>Read More about <%= link_to 'Polybius Square', 'https://en.wikipedia.org/wiki/Polybius_square', target: '_blank' %>.</p>
       <hr>
       <h4>Source Code Links</h4>
-      <p>
-        <a href='https://github.com/nwise/polybius-square-decoder' target='_blank'>This Rails 4 App</a><br>
-        <a href='https://github.com/nwise/polybius-square' target='_blank'>My Polybius Gem</a>
-      </p>
+      <ul>
+        <li><%= link_to 'This Application', 'https://github.com/nwise/polybius-square-decoder', target: '_blank'%> - A Rails 4, Twitter Bootsrtap, and React.js implmentation <br></li>
+        <li><%= link_to 'Polybius Square Gem', 'https://github.com/nwise/polybius-square', target: '_blank' %> - A gem I wrote in October of 2012</li>
+      </ul>
     </div>
   </div>
 </div>
