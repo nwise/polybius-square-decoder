@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'capistrano-rails', group: :development
 gem 'react-rails'
+gem 'polybius-square', git: 'git@github.com:nwise/polybius-square.git', require: 'polybius_square'
 
 group :development, :test do
   gem 'rspec-rails'

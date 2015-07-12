@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:nwise/polybius-square.git
+  revision: 4f1905cfd849b26bb33b47512cbd980f89fba44c
+  specs:
+    polybius-square (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -233,6 +239,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mysql2
+  polybius-square!
   pry
   rails (= 4.2.3)
   react-rails
