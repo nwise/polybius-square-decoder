@@ -1,9 +1,3 @@
-GIT
-  remote: git@github.com:nwise/polybius-square.git
-  revision: 4f1905cfd849b26bb33b47512cbd980f89fba44c
-  specs:
-    polybius-square (0.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,12 +105,13 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
-    mysql2 (0.3.18)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    pg (0.18.2)
+    polybius-square (0.1.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -238,8 +233,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
-  mysql2
-  polybius-square!
+  pg
+  polybius-square
   pry
   rails (= 4.2.3)
   react-rails
