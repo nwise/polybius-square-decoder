@@ -14,7 +14,7 @@
     e.preventDefault()
     errorPane = $('div.alert')
     errorPane.hide()
-    $.post( '', { decoding: @state }, (data) =>
+    $.post( '/decodings', { decoding: @state }, (data) =>
       @props.handleNewDecoding data
       @setState @getInitialState()
     , 'JSON')
