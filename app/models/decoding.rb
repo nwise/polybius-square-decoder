@@ -6,7 +6,7 @@ class Decoding < ActiveRecord::Base
 
   def decode
     begin
-      self.plain = PolybiusSquare::PolybiusSquareProcessor.process(encoded_string: self.encoded)
+      self.plain = PolybiusSquare::PolybiusSquareProcessor.process(encoded_string: self.encoded, dropped_char: 'j')
     rescue TypeError
       self.errors.add(:plain, "String could not be decoded")
     end

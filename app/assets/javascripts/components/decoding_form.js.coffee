@@ -32,7 +32,7 @@
           type: 'text'
           cols:100
           className: 'form-control'
-          placeholder: 'Enter String to Decode Here'
+          placeholder: 'Enter Text to Decode Here'
           name: 'encoded'
           value: @state.encoded
           onChange: @handleChange
