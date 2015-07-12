@@ -13,11 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150712145413) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "decodings", force: :cascade do |t|
-    t.text     "plain",      limit: 65535
-    t.text     "encoded",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "plain"
+    t.text     "encoded"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
