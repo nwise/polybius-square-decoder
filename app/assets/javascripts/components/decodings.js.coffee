@@ -19,9 +19,6 @@
   render: ->
       React.DOM.div
         className: 'decodings'
-        React.DOM.h2
-          className: 'title'
-          'Decodings'
         React.DOM.div
           className: 'alert alert-danger'
           style: {display: 'none'}
@@ -34,7 +31,9 @@
             React.DOM.tr null,
               React.DOM.th null, "English"
               React.DOM.th null, "Encrypted"
-              React.DOM.th null, "Action"
+              React.DOM.th
+                className: 'col-md-2'
+                "Action"
           React.DOM.tbody null,
             for decoding in @state.decodings
               React.createElement Decoding , key: decoding.id, decoding: decoding, handleDeleteDecoding: @deleteDecoding
