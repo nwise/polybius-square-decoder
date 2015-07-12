@@ -25,7 +25,6 @@ class DecodingsController < ApplicationController
   # POST /decodings.json
   def create
     @decoding = Decoding.new(decoding_params)
-
     respond_to do |format|
       if @decoding.save
         format.json { render json: @decoding }
@@ -40,10 +39,8 @@ class DecodingsController < ApplicationController
   def update
     respond_to do |format|
       if @decoding.update(decoding_params)
-        format.html { redirect_to @decoding, notice: 'Decoding was successfully updated.' }
         format.json { render :show, status: :ok, location: @decoding }
       else
-        format.html { render :edit }
         format.json { render json: @decoding.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +51,6 @@ class DecodingsController < ApplicationController
   def destroy
     @decoding.destroy
     respond_to do |format|
-      format.html { redirect_to decodings_url, notice: 'Decoding was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
