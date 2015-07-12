@@ -1,6 +1,7 @@
 @DecodingForm = React.createClass
   getInitialState: ->
       encrypted: ''
+      plain: ''
 
   handleChange: (e) ->
     name = e.target.name
@@ -11,10 +12,16 @@
 
   handleSubmit: (e) ->
     e.preventDefault()
-    $.post '', { decoding: @state }, (data) =>
+    errorPane = $('div.alert')
+    errorPane.hide()
+    $.post( '', { decoding: @state }, (data) =>
       @props.handleNewDecoding data
       @setState @getInitialState()
-      , 'JSON'
+    , 'JSON')
+      .fail (data) ->
+        errorPane.show()
+        error_message = JSON.parse(data.responseText)
+        errorPane.append(error_message.plain)
 
   render: ->
     React.DOM.form
@@ -22,10 +29,11 @@
       onSubmit: @handleSubmit
       React.DOM.div
         className: 'form-group'
-        React.DOM.input
+        React.DOM.textarea
           type: 'text'
+          cols:100
           className: 'form-control'
-          placeholder: 'Enter String to Decrypt Here'
+          placeholder: 'Enter String to Decode Here'
           name: 'encrypted'
           value: @state.encrypted
           onChange: @handleChange

@@ -10,12 +10,22 @@
     decodings.push decoding
     @setState decodings: decodings
 
+  deleteDecoding: (decoding) ->
+    decodings = @state.decodings.slice()
+    index = decodings.indexOf decoding
+    decodings.splice index, 1
+    @replaceState decodings: decodings
+
   render: ->
       React.DOM.div
         className: 'decodings'
         React.DOM.h2
           className: 'title'
           'Decodings'
+        React.DOM.div
+          className: 'alert alert-danger'
+          style: {display: 'none'}
+          role: 'alert'
         React.createElement DecodingForm, handleNewDecoding: @addDecoding
         React.DOM.hr null
         React.DOM.table
@@ -24,9 +34,7 @@
             React.DOM.tr null,
               React.DOM.th null, "English"
               React.DOM.th null, "Encrypted"
-              React.DOM.th null, "Created At"
-              React.DOM.th null, "Updated At"
               React.DOM.th null, "Action"
           React.DOM.tbody null,
             for decoding in @state.decodings
-              React.createElement Decoding , key: decoding.id, decoding: decoding
+              React.createElement Decoding , key: decoding.id, decoding: decoding, handleDeleteDecoding: @deleteDecoding
