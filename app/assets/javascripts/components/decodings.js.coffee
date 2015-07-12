@@ -16,16 +16,17 @@
         React.DOM.h2
           className: 'title'
           'Decodings'
-          React.createElement DecodingForm, handleNewDecoding: @addDecoding
-          React.DOM.hr null
-          React.DOM.table
-            className: 'table table-bordered'
-            React.DOM.thead null,
-              React.DOM.tr null,
-                React.DOM.th null, "English"
-                React.DOM.th null, "Encrypted"
-                React.DOM.th null, "Created At"
-                React.DOM.th null, "Updated At"
-            React.DOM.tbody null,
-              for decoding in @state.decodings
-                React.createElement Decoding , key: decoding.id, decoding: decoding
+        React.createElement DecodingForm, handleNewDecoding: @addDecoding
+        React.DOM.hr null
+        React.DOM.table
+          className: 'table table-bordered table-striped'
+          React.DOM.thead null,
+            React.DOM.tr null,
+              React.DOM.th null, "English"
+              React.DOM.th null, "Encrypted"
+              React.DOM.th null, "Created At"
+              React.DOM.th null, "Updated At"
+              React.DOM.th null, "Action"
+          React.DOM.tbody null,
+            for decoding in @state.decodings
+              React.createElement Decoding , key: decoding.id, decoding: decoding
