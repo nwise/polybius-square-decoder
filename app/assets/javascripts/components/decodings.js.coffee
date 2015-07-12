@@ -30,7 +30,7 @@
           React.DOM.thead null,
             React.DOM.tr null,
               React.DOM.th null, "English"
-              React.DOM.th null, "Encrypted"
+              React.DOM.th null, "Encoded"
               React.DOM.th
                 className: 'col-md-2'
                 "Action"

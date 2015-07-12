@@ -63,6 +63,6 @@ class DecodingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def decoding_params
-      params.require(:decoding).permit(:plain, :encrypted)
+      params.require(:decoding).permit(:plain, :encoded)
     end
 end

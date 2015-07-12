@@ -1,6 +1,6 @@
 @DecodingForm = React.createClass
   getInitialState: ->
-      encrypted: ''
+      encoded: ''
       plain: ''
 
   handleChange: (e) ->
@@ -8,7 +8,7 @@
     @setState "#{name}": e.target.value
 
   valid: ->
-    @state.encrypted
+    @state.encoded
 
   handleSubmit: (e) ->
     e.preventDefault()
@@ -33,8 +33,8 @@
           cols:100
           className: 'form-control'
           placeholder: 'Enter String to Decode Here'
-          name: 'encrypted'
-          value: @state.encrypted
+          name: 'encoded'
+          value: @state.encoded
           onChange: @handleChange
       React.DOM.button
         type: 'submit'

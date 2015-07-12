@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710234303) do
+ActiveRecord::Schema.define(version: 20150712145413) do
 
   create_table "decodings", force: :cascade do |t|
     t.text     "plain",      limit: 65535
-    t.text     "encrypted",  limit: 65535
+    t.text     "encoded",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
