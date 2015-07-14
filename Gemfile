@@ -21,6 +21,8 @@ gem 'polybius-square', ref: 'https://github.com/nwise/polybius-square.git', requ
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'shoulda'
   gem 'capybara'
   gem 'pry'
   gem 'web-console', '~> 2.0'
