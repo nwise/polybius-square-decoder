@@ -7,11 +7,6 @@ class DecodingsController < ApplicationController
     @decodings = Decoding.all
   end
 
-  # GET /decodings/new
-  def new
-    @decoding = Decoding.new
-  end
-
   # POST /decodings
   # POST /decodings.json
   def create
