@@ -1,5 +1,5 @@
 class DecodingsController < ApplicationController
-  before_action :set_decoding, only: [:show, :edit, :update, :destroy]
+  before_action :set_decoding, only: [:destroy]
 
   # GET /decodings
   # GET /decodings.json
@@ -7,18 +7,9 @@ class DecodingsController < ApplicationController
     @decodings = Decoding.all
   end
 
-  # GET /decodings/1
-  # GET /decodings/1.json
-  def show
-  end
-
   # GET /decodings/new
   def new
     @decoding = Decoding.new
-  end
-
-  # GET /decodings/1/edit
-  def edit
   end
 
   # POST /decodings
@@ -28,18 +19,6 @@ class DecodingsController < ApplicationController
     respond_to do |format|
       if @decoding.save
         format.json { render json: @decoding }
-      else
-        format.json { render json: @decoding.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /decodings/1
-  # PATCH/PUT /decodings/1.json
-  def update
-    respond_to do |format|
-      if @decoding.update(decoding_params)
-        format.json { render :show, status: :ok, location: @decoding }
       else
         format.json { render json: @decoding.errors, status: :unprocessable_entity }
       end
